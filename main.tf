@@ -51,7 +51,7 @@ resource "azurerm_linux_virtual_machine" "vm" {
   name                = "vm-suriterraform"
   resource_group_name = azurerm_resource_group.rg.name
   location            = azurerm_resource_group.rg.location
-  size                = "Standard_B2ms"  # Make sure this is available in Poland Central
+  size                = "Standard_B1ms"  # Make sure this is available in Poland Central
   admin_username      = "adminuser"
   network_interface_ids = [azurerm_network_interface.nic.id]
 
