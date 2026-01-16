@@ -24,7 +24,7 @@ pipeline {
                     env.ARM_SUBSCRIPTION_ID = json.subscription_id
                 }
 
-                bat 'terraform init'
+                bat 'terraform init -upgrade'
             }
         }
 
