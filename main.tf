@@ -1,7 +1,7 @@
 terraform {
   required_providers {
     azurerm = {
-      source = "hashicorp/azurerm"
+      source  = "hashicorp/azurerm"
       version = "4.57.0"
     }
   }
@@ -14,7 +14,7 @@ provider "azurerm" {
 # Resource Group
 resource "azurerm_resource_group" "rg" {
   name     = "rg-suriterraform"
-  location = "Poland Central"
+  location = "westeurope"  # Changed from Poland Central
 }
 
 # Virtual Network
@@ -51,7 +51,7 @@ resource "azurerm_linux_virtual_machine" "vm" {
   name                = "vm-suriterraform"
   resource_group_name = azurerm_resource_group.rg.name
   location            = azurerm_resource_group.rg.location
-  size                = "Standard_B1ms"  # Make sure this is available in Poland Central
+  size                = "Standard_B1ms"  # This size is available in westeurope
   admin_username      = "adminuser"
   network_interface_ids = [azurerm_network_interface.nic.id]
 
